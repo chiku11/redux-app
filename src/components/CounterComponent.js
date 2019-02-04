@@ -20,7 +20,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps (dispatch) {
-
+    console.log(`the action is dispatched `, dispatch);
     return {
         onIncrementClick: () => {
             const action = {type: 'INCREMENT'};

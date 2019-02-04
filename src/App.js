@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Counter from './components/CounterComponent'
+import Counter from './components/CounterComponent';
+import ContactComponent from './components/ContactComponent';
 
 class App extends Component {
   render() {
@@ -8,6 +9,7 @@ class App extends Component {
 
       <div className="App">
         <Counter />
+        <ContactComponent />
       </div>
     );
   }
