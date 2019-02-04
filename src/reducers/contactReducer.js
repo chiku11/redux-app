@@ -1,4 +1,5 @@
 const initialState = {
+    currentId : 1,
     contacts:[{name: 'Srikant', id: 1}, {name: 'Siri', id: 2} ]
 }
 
@@ -7,7 +8,8 @@ const ContactReducer = (state=initialState, action={}) => {
     switch(action.type){
 
         case 'INVOKE_CONTACTINFO':
-            return state;
+            console.log(`the contact state in rducer `, state);
+            return Object.assign({}, state, {currentId:action.id});
         default:
             return state;
     }

@@ -1,20 +1,20 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-function ContactComponent() {
+function ContactInfoComponent(props) {
     return (
         <div>
-            <ol>
-                contacts.forEach(element => {
-                    <li> element.name</li>
-                });
-            </ol>
+             <label> {props.id} </label>
         </div>
     );
 }
 
-functions mapStateToProps(state){
+function mapStateToProps(state){
+    console.log(`the state for contact ${JSON.stringify(state)}`);
+    console.log(`${JSON.stringify(state.ContactReducer.contacts)}`);
     return (
-        { contacts: state.contacts}
+        { id: state.ContactReducer.currentId}
     );
 }
+
+export default connect(mapStateToProps)(ContactInfoComponent);

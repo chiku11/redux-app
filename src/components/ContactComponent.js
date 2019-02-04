@@ -6,7 +6,7 @@ function ContactComponent(props) {
         <div>
              <ul>
                 {props.contacts.map(function(contact, id){
-                     return <li key={ id }>{contact.name}</li>;
+                     return <li onClick={() => props.onClickContact(contact.id)} key={ id }>{contact.name}</li>;
                   })}
             </ul>
         </div>
@@ -23,8 +23,8 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return {
-        onClickContact: () => {
-            const action= {type:'INVOKE_CONTACTINFO'};
+        onClickContact: (id) => {
+            const action= {type:'INVOKE_CONTACTINFO', id};
             dispatch(action);
         }
     }
